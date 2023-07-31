@@ -10,7 +10,10 @@
 |    3    | LeetCode-78 | 排列/组合/子集 | [子集](./leetcode/78.cpp) | 回溯 | 子集问题，使用 `start (int)` 保证向后遍历即可 |
 |    4    | LeetCode-77 | 排列/组合/子集 | [组合](./leetcode/77.cpp) | 回溯 | 同 LeetCode-78 |
 |    5    | LeetCode-46 | 排列/组合/子集 | [排列](./leetcode/46.cpp) | 回溯 | 排列问题，使用 `used (List[bool])` 保证不使用重复元素即可 |
-|    6    | LeetCode-90 | 排列/组合/子集 | [子集-Ⅱ](./leetcode/90.cpp) | 回溯 | 有重复元素的子集问题，注意要对数组进行排序`sort(nums.begin(), nums.end())`，使用 `i > start && nums[i] != nums[i-1]` 排除除第一次外，不要出现重复乱序的现象 |
+|    6    | LeetCode-90 | 排列/组合/子集 | [子集 II](./leetcode/90.cpp) | 回溯 | 有重复元素的子集问题，注意要对数组进行排序`sort(nums.begin(), nums.end())`，使用 `i > start && nums[i] != nums[i-1]` 排除除第一次外，不要出现重复乱序的现象 |
+|    7    | LeetCode-40 | 排列/组合/子集 | [组合总和 II](./leetcode/40.cpp) | 回溯 | 同 LeetCode-90 |
+|    8    | LeetCode-47 | 排列/组合/子集 | [全排列 II](./leetcode/47.cpp) | 回溯 | 排列问题不需要使用 `start`，跳过条件有两个：1）用过的不再用 `used[i]`，2）有重复元素时，保证不会重复出现，出现相同时，只有前面用过了，后面才会继续用 `i > 0 && nums[i] == nums[i-1] && !used[i]` |
+|    9    | LeetCode-39 | 排列/组合/子集 | [组合总和](./leetcode/39.cpp) | 回溯 | 要使用 `start` 参数，防止重复遍历；由于可重复选择，所以 `bactrack(nums, target, i, track_sum, track, rets);` 使用的是 `i` 而不是 `i + 1` |
 |  ...   |      ...      |    ...   |    ...   |  ... |
 
 如果想要添加或删除列，可以自行修改。
