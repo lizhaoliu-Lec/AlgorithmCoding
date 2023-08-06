@@ -20,6 +20,8 @@
 |    12    | LeetCode-94 | 二叉树 | [二叉树的中序遍历](./leetcode/94.cpp) | 递归/栈 | 注意栈的实现，两层循环（直接看代码即可，有点复杂） |
 |    13    | LeetCode-145 | 二叉树 | [二叉树的后序遍历](./leetcode/145.cpp) | 递归/栈 | 注意栈的实现，后序遍历在中序的双层循环的基础上需要加入一个记录，专门记录上一次出栈的节点（直接看代码即可，有点复杂） |
 |    14    | LeetCode-543 | 二叉树 | [二叉树的直径](./leetcode/543.cpp) | 递归 | 半径等于左右最大深度之和为 `int cur_diameter = left_depth + right_depth;`，当前节点能贡献的最大半径为 `1 + max(left_depth, right_depth)` |
+|    15    | LeetCode-303 | 前缀和 | [区域和检索 - 数组不可变](./leetcode/303.cpp) | 前缀和 | 注意前缀和数组大小，以及索引范围: `vector<int> pre_sum(nums.size() + 1, 0); pre_sum[i] = pre_sum[i - 1] + nums[i - 1]; return pre_sum[right + 1] - pre_sum[left];` |
+|    16    | LeetCode-304 | 前缀和 | [二维区域和检索 - 矩阵不可变](./leetcode/304.cpp) | 前缀和 | 注意前缀和数组大小，以及索引范围: `vector<vector<int>> pre_sum(num_row + 1, vector<int>(num_col + 1, 0)); pre_sum[i][j] = pre_sum[i - 1][j] + pre_sum[i][j - 1] - pre_sum[i - 1][j - 1] + matrix[i - 1][j - 1]; return pre_sum[row2 + 1][col2 + 1] - pre_sum[row1][col2 + 1] - pre_sum[row2 + 1][col1] + pre_sum[row1][col1];` |
 |  ...   |      ...      |    ...   |    ...   |  ... |
 
 如果想要添加或删除列，可以自行修改。
