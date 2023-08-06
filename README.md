@@ -15,6 +15,11 @@
 |    8    | LeetCode-47 | 排列/组合/子集 | [全排列 II](./leetcode/47.cpp) | 回溯 | 排列问题不需要使用 `start`，跳过条件有两个：1）用过的不再用 `used[i]`，2）有重复元素时，保证不会重复出现，出现相同时，只有前面用过了，后面才会继续用 `i > 0 && nums[i] == nums[i-1] && !used[i]` |
 |    9    | LeetCode-39 | 排列/组合/子集 | [组合总和](./leetcode/39.cpp) | 回溯 | 要使用 `start` 参数，防止重复遍历；由于可重复选择，所以 `bactrack(nums, target, i, track_sum, track, rets);` 使用的是 `i` 而不是 `i + 1` |
 |    10    | LeetCode-223 | 算法题 IoU | [矩形面积](./leetcode/223.cpp) | 画图+理解 | x 轴相交区域 `[max(ax1, bx1), min(ax2, bx2)]`; y 轴相交区域 `[max(ay1, by1), min(ay2, by2)]`; 线段长度要大于 0 才说明有交集 `x2 - x1 > 0 && y2 - y1 > 0` |
+|    11    | LeetCode-104 | 二叉树 | [二叉树的最大深度](./leetcode/104.cpp) | 递归 | 使用 traverse 辅助函数 |
+|    12    | LeetCode-144 | 二叉树 | [二叉树的前序遍历](./leetcode/144.cpp) | 递归/栈 | 注意栈的实现，当前节点出栈，先压右节点，再压左节点 |
+|    12    | LeetCode-94 | 二叉树 | [二叉树的中序遍历](./leetcode/94.cpp) | 递归/栈 | 注意栈的实现，两层循环（直接看代码即可，有点复杂） |
+|    13    | LeetCode-145 | 二叉树 | [二叉树的后序遍历](./leetcode/145.cpp) | 递归/栈 | 注意栈的实现，后序遍历在中序的双层循环的基础上需要加入一个记录，专门记录上一次出栈的节点（直接看代码即可，有点复杂） |
+|    14    | LeetCode-543 | 二叉树 | [二叉树的直径](./leetcode/543.cpp) | 递归 | 半径等于左右最大深度之和为 `int cur_diameter = left_depth + right_depth;`，当前节点能贡献的最大半径为 `1 + max(left_depth, right_depth)` |
 |  ...   |      ...      |    ...   |    ...   |  ... |
 
 如果想要添加或删除列，可以自行修改。
