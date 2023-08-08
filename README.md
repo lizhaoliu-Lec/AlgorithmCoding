@@ -22,6 +22,8 @@
 |    14    | LeetCode-543 | 二叉树 | [二叉树的直径](./leetcode/543.cpp) | 递归 | 半径等于左右最大深度之和为 `int cur_diameter = left_depth + right_depth;`，当前节点能贡献的最大半径为 `1 + max(left_depth, right_depth)` |
 |    15    | LeetCode-303 | 前缀和 | [区域和检索 - 数组不可变](./leetcode/303.cpp) | 前缀和 | 注意前缀和数组大小，以及索引范围: `vector<int> pre_sum(nums.size() + 1, 0); pre_sum[i] = pre_sum[i - 1] + nums[i - 1]; return pre_sum[right + 1] - pre_sum[left];` |
 |    16    | LeetCode-304 | 前缀和 | [二维区域和检索 - 矩阵不可变](./leetcode/304.cpp) | 前缀和 | 注意前缀和数组大小，以及索引范围: `vector<vector<int>> pre_sum(num_row + 1, vector<int>(num_col + 1, 0)); pre_sum[i][j] = pre_sum[i - 1][j] + pre_sum[i][j - 1] - pre_sum[i - 1][j - 1] + matrix[i - 1][j - 1]; return pre_sum[row2 + 1][col2 + 1] - pre_sum[row1][col2 + 1] - pre_sum[row2 + 1][col1] + pre_sum[row1][col1];` |
+|    17    | JZ-15 | 位运算 | [二进制中1的个数](./jz_offer/15.cpp) | 位运算 | 判断最右边是否是1：`n & 1`, 数字右移一位：`n = n >> 1;` |
+|    18    | LeetCode-76 | 字符串匹配 | [最小覆盖子串](./leetcode/76.cpp) | 滑动窗口 | 滑动窗口思路：1. 右指针先行，更新窗口数据，2. 确定收缩条件，3. 左指针再行，更新窗口数据；关于 `unordered_map`，有几个注意点：1. `need[i]`等价于`need[i] = 0`，2. `need.count(i)` 即为查找功能，所以本题中，在更新窗口数据前要进行判断，即`if (need.count(val_l))`, `if (need.count(val_r))` |
 |  ...   |      ...      |    ...   |    ...   |  ... |
 
 如果想要添加或删除列，可以自行修改。
