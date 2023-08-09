@@ -23,7 +23,10 @@
 |    15    | LeetCode-303 | 前缀和 | [区域和检索 - 数组不可变](./leetcode/303.cpp) | 前缀和 | 注意前缀和数组大小，以及索引范围: `vector<int> pre_sum(nums.size() + 1, 0); pre_sum[i] = pre_sum[i - 1] + nums[i - 1]; return pre_sum[right + 1] - pre_sum[left];` |
 |    16    | LeetCode-304 | 前缀和 | [二维区域和检索 - 矩阵不可变](./leetcode/304.cpp) | 前缀和 | 注意前缀和数组大小，以及索引范围: `vector<vector<int>> pre_sum(num_row + 1, vector<int>(num_col + 1, 0)); pre_sum[i][j] = pre_sum[i - 1][j] + pre_sum[i][j - 1] - pre_sum[i - 1][j - 1] + matrix[i - 1][j - 1]; return pre_sum[row2 + 1][col2 + 1] - pre_sum[row1][col2 + 1] - pre_sum[row2 + 1][col1] + pre_sum[row1][col1];` |
 |    17    | JZ-15 | 位运算 | [二进制中1的个数](./jz_offer/15.cpp) | 位运算 | 判断最右边是否是1：`n & 1`, 数字右移一位：`n = n >> 1;` |
-|    18    | LeetCode-76 | 字符串匹配 | [最小覆盖子串](./leetcode/76.cpp) | 滑动窗口 | 滑动窗口思路：1. 右指针先行，更新窗口数据，2. 确定收缩条件，3. 左指针再行，更新窗口数据；关于 `unordered_map`，有几个注意点：1. `need[i]`等价于`need[i] = 0`，2. `need.count(i)` 即为查找功能，所以本题中，在更新窗口数据前要进行判断，即`if (need.count(val_l))`, `if (need.count(val_r))` |
+|    18    | LeetCode-76 | 字符串匹配 | [最小覆盖子串](./leetcode/76.cpp) | 滑动窗口 | 滑动窗口思路：1. 右指针先行，更新窗口数据，2. 确定收缩条件，3. 左指针再行，更新窗口数据；需要的数据结构有：`unordered_map<char, int> window; unordered_map<char, int> need; int valid = 0;` 关于 `unordered_map`, 有几个注意点：1.`need[i]`等价于`need[i] = 0`，2. `need.count(i)` 即为查找功能，所以本题中，在更新窗口数据前要进行判断，即`if (need.count(val_l))`, `if (need.count(val_r))` |
+|    19    | LeetCode-567 | 字符串匹配 | [字符串的排列](./leetcode/567.cpp) | 滑动窗口 | 滑动窗口遗漏了两指针先行：1. 右指针先行，更新窗口数据 `char val_r = s2[right]; right += 1;`，...，3. 左指针再行，更新窗口数据 `char val_l = s2[left]; left += 1;` |
+|    20    | LeetCode-438 | 字符串匹配 | [字符串的排列](./leetcode/438.cpp) | 滑动窗口 | 同 LeetCode-567 |
+|    21    | LeetCode-3 | 字符串匹配 | [无重复字符的最长子串](./leetcode/3.cpp) | 滑动窗口 | `need, valid` 都不需要；结果更新要在左窗口 while 之后，此时确保是无重复字符的 |
 |  ...   |      ...      |    ...   |    ...   |  ... |
 
 如果想要添加或删除列，可以自行修改。
