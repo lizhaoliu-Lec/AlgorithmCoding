@@ -29,6 +29,8 @@
 |    21    | LeetCode-3 | 字符串匹配 | [无重复字符的最长子串](./leetcode/3.cpp) | 滑动窗口 | `need, valid` 都不需要；结果更新要在左窗口 while 之后，此时确保是无重复字符的 |
 |    22    | LeetCode-704 | 数组 | [二分查找](./leetcode/704.cpp) | 二分法 | 4 个注意点：1. 初始条件 `int left=0, right=nums.size()-1;`, 2. 循环条件 `while (left <= right)`, 3. mid 计算规则 `int mid = left + (right - left)/2`, 4. 左右指针更新规则 `left = mid-1; right = mid+1;` |
 |    23    | LeetCode-34 | 数组 | [在排序数组中查找元素的第一个和最后一个位置](./leetcode/34.cpp) | 二分法 | 左右边界的二分查找. 对于左边界查找, 遇 target 时更新条件为 `right = mid-1;`, 随后要判断 `left >= nums.size()`, 最后再次确认是否遇 target `return nums[left] == target ? left : -1;`; 对于右边界查找, 遇 target 时更新条件为 `left = mid+1;`, 随后要判断 `right < 0`, 最后再次确认是否遇到 target `return nums[right] == target ? right : -1;` |
+|    24    | LeetCode-111 | 队列 | [二叉树的最小深度](./leetcode/111.cpp) | BFS | 先把根入队列，更新对应值 `q.push(root); ret += 1;`, 外循环遍历直到队列非空 `while (!q.empty())`, 内循环遍历完当前层 `int q_len = q.size(); for (int i = 0; i < q_len; i++)`, 某层遍历完之后可能要更新结果 |
+|    25    | LeetCode-752 | 队列 | [打开转盘锁](./leetcode/752.cpp) | BFS | 两个犯错点, `q.push(n); visited.insert(n);` 是原子操作, 要一起执行; 判断条件是否终止直接对 pop 出来的元素进行判断并返回 `string cur = q.front(); q.pop(); if (cur == target) { return ret; }` |
 |  ...   |      ...      |    ...   |    ...   |  ... |
 
 如果想要添加或删除列，可以自行修改。
